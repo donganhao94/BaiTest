@@ -1,0 +1,259 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+</head>
+<script>
+	function bt1(a){
+		arr=a.split();
+		for(i=0;i<arr.lenght;i++){
+			for(j=0;j<arr.lenght;j++){
+				if(arr[i]==arr[j]&&i!=j) break;
+				if(j==arr.length-1) return alert(arr[i]);
+			}
+		}
+	}
+	function check(){
+		check=false;
+		var ten=document.forms["dangky"]["ten"].value;
+		var ns=document.forms["dangky"]["ns"].value;
+		var email=document.forms["dangky"]["email"].value;
+		if(ten=="") {document.getElementById("ten").innerHTML = "chưa nhập tên";check=true}		
+		else document.getElementById("ten").innerHTML = "";
+		if(ns=="") {document.getElementById("ten").innerHTML = "chưa nhập ngày sinh";check=true}
+		else document.getElementById("ten").innerHTML = "";
+		if(email=="") {document.getElementById("ten").innerHTML = "chưa nhập email";check=true}
+		else document.getElementById("ten").innerHTML = "";
+		return check;
+	}
+</script>
+<style>
+body{
+	box-sizing: border-box;
+}
+#wrapper{
+	margin:0 100px;
+}
+#header{
+	position:relative;
+	height:100px;
+	background:url(img/line.png) repeat-x bottom;
+}
+#nav{
+	margin-top:-50px;
+	height:40px;
+}
+#div1{
+	position:relative;
+	margin-bottom:0;
+	background:url(img/sanfrancisco.jpg);
+	background-size:cover;
+	border-radius:10px;
+	height:219px;
+	margin-bottom:20px;
+}
+#section{
+	display:inline;
+}
+#article{
+	width:75%;
+	float:left;
+}
+#aside{
+	position:relative;
+	float:right;
+	text-align:center;
+	width:20%;
+	margin-left:5px;
+	padding:15px 15px;
+}
+#footer{
+	background:url(img/line.png) repeat-x top ,url(img/top.png) no-repeat top center;
+	height:40px;
+	clear:both;
+	padding-top:10px;
+}
+#nav li{
+	float:right;
+	width:80px;
+	height:40px;
+  	line-height: 40px;
+	margin-right: 30px;
+}
+#nav ul{
+	list-style-type: none;
+  	overflow: hidden;
+  	width: 100%;
+	list-style-type: none;
+ 	text-align: center;
+}
+#nav a{
+	text-decoration: none;
+ 	text-align: center;
+	padding:20px 20px 20px 20px;
+}
+#header h1{
+	font-family: 'BallparkWeiner', serif;
+    font-size: 2.5em;
+    font-weight: normal;
+	display:inline;
+}
+#nav a:hover{
+	text-decoration: underline;
+}
+body{
+	background:url(img/yellow_background.png);
+}
+#div1 button{
+	background:url(img/red_background.png);
+	border: 1px solid #760001;
+	position: absolute;
+	right:    5px;
+	bottom:   10px;
+}
+#div1>p{
+	position: absolute;
+	left:    0;
+	bottom:   0;
+}
+#sanfrancisco{
+	border-radius:5px;
+	width:100%;
+}
+#section p{
+	text-align:justify;
+}
+.iconsmall{
+	vertical-align: middle;
+    margin-right: 10px;
+	margin-bottom: 5px;
+}
+<hr>{
+	background:url(img/line.png);
+}
+#banner_description{
+    bottom: 0;
+    border-radius: 0px 0px 5px 5px;
+    width: 99.5%;
+    height: 33px;
+    padding-top: 15px;
+    padding-left: 4px;
+    background-color: rgba(24,24,24,0.8);
+    color: white;
+    font-size: 0.8em;
+	margin-top:-50px;
+	position: absolute;
+	right:    0;
+	bottom:   0;
+	border-radius:0 0 10px 10px;
+}
+#footer p{
+	font-size:14px;
+	font-weight:normal;
+}
+#footer h1{
+	font-weight:normal;
+	font-size:20px;
+}
+#footer div{
+	padding-top:20px;
+}
+.pic{
+	margin-right:10px;
+}
+table {
+	border:solid 1px black;
+}
+</style>
+<body>
+<div id="wrapper">
+	<header id="header">
+        <img src="img/zozor_logo.png" alt="logo_zozor">
+        <h1>ZOZOR</h1>
+        <p style="position:absolute;bottom:-10px;">Travel diares</p>
+    </header>
+    <nav id="nav">
+        <ul>
+            <li>
+            <a href="#" >HOME</a>
+            </li>
+            <li>
+            <a href="#" >BLOG</a>
+            </li>
+            <li>
+            <a href="#" >RESUME</a>
+            </li>
+            <li>
+            <a href="#" >CONTACT</a>
+            </li>
+        </ul>
+    </nav>
+    <div id="div1">
+    	<div id="banner_description">
+            <p style="color: white;display:inline;bottom:-10px">Reflection on my holiday in the United States...</p>
+            <button><p style="color: white;display:inline"> See article </p><img src="img/small_arrow.png" alt="arrow"></button>
+        </div>
+    </div>
+    <section id="section">
+        <article id="article">
+            <img src="img/pin.png" alt="pin"> I'M A GREATER TRAVELLER
+            <form id="dangky" method="post" action="" onSubmit="return check();">
+            <table align="center">
+            	<caption>Đăng ký</caption>
+            	<tr>
+                	<td>Họ tên</td>
+                    <td><input required name="ten" type="text"><p id="ten" style="color:red"><p></td>
+                </tr>
+                <tr>
+                	<td>Ngày sinh</td>
+                    <td><input required name="ns" type="text"><p id="ns" style="color:red"><p></td>
+                </tr>
+                <tr>
+                	<td>Giới tính</td>
+                    <td><input name="gt" type="radio" checked>Nam <input name="gt" type="radio">Nữ<p id="gt" style="color:red"><p></td>
+                </tr>
+                <tr>
+                	<td>Email</td>
+                    <td><input required name="email" type="text"><p id="email" style="color:red"><p></td>
+                </tr>
+                <tr>
+                	<td colspan="2" align="center"><input type="submit" name="send" "></td>
+                </tr>
+            </table>
+            </form>
+        </article>
+        <aside id="aside">
+            <p style="text-align:center">ABOUT THE AUTHOR</p>
+            <img src="img/zozor.png" alt="zozor">
+            <p>
+                Let me introduce myself: My name's Zozor. I was born on 23 November 2005. A bit meager, is it not? This is why I've now decided to write my biography to let my readers know who i really am.
+            </p>
+            <p>
+            <img class="iconsmall" src="img/facebook.png" alt="facebook">
+            <img class="iconsmall" src="img/twitter.png" alt="twitter">
+            <img class="iconsmall" src="img/vimeo.png" alt="vimeo">
+            <img class="iconsmall" src="img/flickr.png" alt="flickr">
+            <img class="iconsmall" src="img/rss.png" alt="rss">
+            </p>
+        </aside>
+     </section>
+    <footer id="footer">
+    	<div style="float:left;width:40%">
+            <h1>MY LAST TWEET<h1>
+            <p>Hee-haw</p>   
+            <p>07/02 12:50</p>
+        </div>
+        <div style="float:left;">
+            <h1>MY PICTURES<h1>
+            <p><img class="pic" src="img/pic1.jpg" alt="pic1"><img class="pic" src="img/pic2.jpg" alt="pic2"><img class="pic" src="img/pic3.jpg" alt="pic3"></p>         
+        </div>
+        <div style="float:right;width:20%">
+            <h1>MY LAST TWEET<h1>
+            <p>Hee-haw</p>   
+            <p>07/02 12:50</p>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
